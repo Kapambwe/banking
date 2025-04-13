@@ -1,0 +1,70 @@
+{
+  "sources": [
+    {
+      "id": "b8594716-6ae3-4b9c-bc6a-d15b624f1ff2",
+      "name": "AzureSqlDb",
+      "type": "AzureSQLDBCDC",
+      "properties": {
+        "dataConnectionId": "813ae839-2af7-407d-afb3-65b96db6c41e",
+        "tableName": ""
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "id": "0e4701b8-d055-47d5-91f1-d75497313d66",
+      "name": "bankingmoneylaunderingactivator",
+      "type": "Activator",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "fb98d524-c9bc-8935-4a05-bf79c992dd36",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "banking_eventstream-stream"
+        }
+      ],
+      "inputSchemas": []
+    },
+    {
+      "id": "68851f4a-9374-4264-87bc-4c0e077b3940",
+      "name": "bankingtransactionkql",
+      "type": "Eventhouse",
+      "properties": {
+        "dataIngestionMode": "DirectIngestion",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "efe60d6d-fb6a-ab85-4d91-e0ada8e3c1af",
+        "tableName": "transactions",
+        "connectionName": null,
+        "mappingRuleName": null
+      },
+      "inputNodes": [
+        {
+          "name": "banking_eventstream-stream"
+        }
+      ],
+      "inputSchemas": []
+    }
+  ],
+  "streams": [
+    {
+      "id": "88f315fe-a917-4b22-b560-c92de40735fc",
+      "name": "banking_eventstream-stream",
+      "type": "DefaultStream",
+      "properties": {},
+      "inputNodes": [
+        {
+          "name": "AzureSqlDb"
+        }
+      ]
+    }
+  ],
+  "operators": [],
+  "compatibilityLevel": "1.0"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLQueryset",
+    "displayName": "banking_eventhouse_queryset",
+    "description": "banking_eventhouse_queryset"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "696b3ffb-1d17-8271-4e2b-863b9aaa026f"
+  }
+}

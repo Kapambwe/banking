@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "banking_eventstream"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5eec34de-799a-9fcc-41ef-13f0102b6ce0"
+  }
+}
